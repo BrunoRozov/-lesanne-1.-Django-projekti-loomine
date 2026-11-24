@@ -5,7 +5,23 @@
     <title>Avaleht</title>
 </head>
 <body>
-    <h1>Minu raamatukogu</h1>
-    <p>Raamatukogu lol</p>
+    <h1>{{ pealkiri }}</h1>
+    <ul>
+        {% for raamat in raamatud %}
+            <li>
+                <strong>{{ raamat.nimi }}</strong>
+                - autor: {{ raamat.autor }}
+
+                {% if raamat.saadaval == True %}
+                    <p>Saadaval</p> 
+
+                {% else %}
+                    <p>Pole saadaval</p>
+
+                {% endif %}
+                
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
