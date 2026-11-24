@@ -6,20 +6,18 @@
 </head>
 <body>
     <h1>{{ pealkiri }}</h1>
+
     <ul>
         {% for raamat in raamatud %}
             <li>
-                <strong>{{ raamat.nimi }}</strong>
-                - autor: {{ raamat.autor }}
+                <strong>{{ raamat.title }}</strong>
+                - Autor: {{ raamat.author }}
 
-                {% if raamat.saadaval == True %}
-                    <p>Saadaval</p> 
-
+                {% if raamat.available %}
+                    <p>Saadaval!</p>
                 {% else %}
-                    <p>Pole saadaval</p>
-
+                    <p>Pole saadaval!</p>
                 {% endif %}
-                
             </li>
         {% endfor %}
     </ul>
