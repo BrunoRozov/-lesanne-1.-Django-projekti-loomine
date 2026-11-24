@@ -2,5 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
-    title = models.CharField(max_lenght=200)
-    author = models.CharField(max_lenght=200)
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    year = models.IntegerField()
+    available = models.BooleanField(default=True)
+    genre = models.CharField(max_length=100, default="Muu")
